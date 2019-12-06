@@ -91,7 +91,7 @@ class Resource(models.Model):
     title = models.CharField(max_length=40)  # I don't make it unique so we need to rename the real file on server
     abs_url = models.CharField(max_length=60, unique=True)
     upload_time = models.DateTimeField(auto_now_add=True)
-    upload_user = models.ForeignKey('User.uid', on_delete='CASCADE')
+    upload_user = models.ForeignKey('User', on_delete='CASCADE')
 
     description = models.CharField(max_length=140, default="")
     download_count = models.IntegerField()
@@ -132,8 +132,8 @@ class TagResourceLink(models.Model):
     tag_name:
     resource:
     """
-    tag_name = models.ForeignKey('TagList.tag_name', on_delete='CASCADE')
-    resource = models.ForeignKey("Resource.uid", on_delete='CASCADE')
+    tag_name = models.ForeignKey('TagList', on_delete='CASCADE')
+    resource = models.ForeignKey("Resource", on_delete='CASCADE')
 
     class Meta:
         unique_together = ('tag_name', 'resource')

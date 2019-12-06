@@ -1,0 +1,142 @@
+.loginPic{
+    width: 50px;
+    border-radius: 200px;
+    height: 50px;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+.whulogo{
+    height: 50px;
+    width: 130px;
+    padding-top: 10px;
+}
+
+.bottom_row{
+    width: 100%;
+    background-color: #414141;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    clear: left;
+}
+
+.title {
+    font-weight: bold;
+    font-style: normal;
+    font-family: "Source Sans Pro";
+    text-align: center;
+    color: #FFFFFF;
+    letter-spacing: 2px;
+}
+
+.fixedthumbnail {
+    width: 100px;
+    border-radius: 200px;
+    height: 100px;
+    margin-left: auto;
+}
+
+.fixedthumbnail_align {
+    text-align: center;
+}
+
+.social {
+    text-align: center;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    width: 100%;
+    background-color: #414141;
+    clear: both;
+    overflow: auto;
+}
+
+.social_icon {
+    width: 25%;
+    text-align: center;
+    float: left;
+    transition: all 0.3s linear;
+    line-height: 0px;
+    padding-top: 7px;
+}
+
+.social .social_icon:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.underline{
+    color: white;
+}
+
+.underline:hover{
+    padding-bottom: 5px;
+    border-bottom: 1px solid white;
+}
+
+.list-group-item:hover{
+    color: #0b2e13;
+}
+
+.btn-default{
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.btn-default:focus{
+    outline: none;
+    border: none;
+}
+
+.btnlogin{
+    color: white;
+    background-color: transparent;
+    margin-right: 20px;
+}
+
+.searchbutton{
+    width: 30px;
+    height: 30px;
+}
+
+.guidelabel{
+    margin-left: 30px;
+}
+
+.container{
+    margin-top: 5%;
+}
+
+.carousel{
+    height: 750px;
+}
+
+#myCarousel .carousel-inner > .item > img {
+    display: block;
+    width: 100%;
+    height: 750px;
+}
+
+.download{
+    background-color: forestgreen;
+}
+
+.documentsPic{
+    height: 15px;
+    width: 15px;
+}
+
+.img-responsive{
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+.carousel {
+    margin-bottom: 4rem;
+}
+.carousel-caption {
+    bottom: 3rem;
+    z-index: 10;
+}

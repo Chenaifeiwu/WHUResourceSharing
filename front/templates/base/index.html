@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <title>武汉大学资源管理平台</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href={% static 'css/indexcss.css' %}>
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid" style="background: forestgreen">
+            <div class="navbar-header">
+                <img src={% static 'image/whitewhulogo.png' %} class="whulogo">
+            </div>
+            <div>
+                <ul class="nav navbar-nav guidelabel">
+                    <li><a href="#"><div class="underline"><img src={% static 'image/documents.png' %} class="documentsPic">&emsp;学习资料</div></a></li>
+                    <li><a href="#"><div class="underline">test</div></a></li>
+                </ul>
+            </div>
+            <div class="navbar-right">
+                <img src={% static 'image/akari.jpg' %} class="loginPic">
+                {% if username %}
+                    <span class="title" style="margin-right: 10px">{{ username }}</span>
+                {% else %}
+{#                    <p style="color: white">未登录</p>#}
+                    <a class="btn btn-default btnlogin"href={% url 'base:base_login' %} >登录</a>
+{#                <button type="button" class="btn btn-default btnlogin"><a class="btn btn-default btnlogin"href="">登录</a></button>#}
+{#                <button type="button" class="btn btn-default btnlogin">注册</button>#}
+                    <a class="btn btn-default btnlogin"href={% url 'base:base_register' %}>注册</a>
+                {% endif %}
+
+            </div>
+            <form class="navbar-form navbar-right" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control">
+                </div>
+                <button type="button" class="btn btn-default navbar-button"><img class="searchbutton" src={% static 'image/search.png' %}></button>
+            </form>
+        </div>
+    </nav>
+</header>
+<div class="container">
+    <div class="row" >
+        <div id="myCarousel" class="carousel slide">
+            <!-- 轮播（Carousel）指标 -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <!-- 轮播（Carousel）项目 -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src={% static 'image/floatimage1.jpeg' %} alt="First slide">
+                    <div class="carousel-caption">
+                        <h3>第一张图片描述标题</h3>
+                        <p>描述文字!</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src={% static 'image/floatimage2.jpeg' %} alt="Second slide">
+                    <div class="carousel-caption">
+                        <h3>第二张图片描述标题</h3>
+                        <p>描述文字!</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src={% static 'image/floatimage3.jpeg' %} alt="Third slide">
+                    <div class="carousel-caption">
+                        <h3>第三张图片描述标题</h3>
+                        <p>描述文字!</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 轮播（Carousel）导航 -->
+            <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+                <span _ngcontent-c3="" aria-hidden="true" class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="carousel-control right" href="#myCarousel" data-slide="next">
+                <span _ngcontent-c3="" aria-hidden="true" class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
+        <div class="col-xs-9 col-sm-9 col-md-9" style="background-color: white;">
+            <div class="row">
+
+                {% for person,attr in persons.items %}
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <div class="thumbnail">
+                            <img src=/static/{{ attr.image }} class="img-responsive">
+                            <div class="caption">
+                                <h3>{{ person }}</h3>
+                                <p>{{ attr.text }}</p>
+                                <p>
+                                    <a href="#" class="btn btn-primary" role="button">按钮</a>
+                                    <a href="#" class="btn btn-default" role="button">按钮</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+            <hr class="featurette-heading">
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 list-group" style="background-color: white;">
+            <span class="label label-primary download">下载排行</span>
+            {% for item in rank_list %}
+                <a href="#" class="list-group-item">{{ item }}</a>
+            {% endfor %}
+
+
+        </div>
+    </div>
+</div>
+<div class="bottom_row">
+    <h1 class="title">团队成员</h1>
+</div>
+<div class="social">
+    <p class="social_icon"><img src={% static 'image/hjw.jpg' %} width="100" alt="" class="fixedthumbnail"/></p>
+    <p class="social_icon"><img src={% static 'image/zyr.jpg' %} width="100" alt="" class="fixedthumbnail"/></p>
+    <p class="social_icon"><img src={% static 'image/djc.jpg' %} width="100" alt="" class="fixedthumbnail"/></p>
+    <p class="social_icon"><img src={% static 'image/xzy.jpg' %} width="100" alt="" class="fixedthumbnail"/></p>
+</div>
+<footer class="bottom_row">
+    <h5 class="title">1559956320@qq.com</h5>
+</footer>
+</body>
+</html>

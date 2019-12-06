@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <title>下载页</title>
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/downloadmain.css">
+    <link rel="stylesheet" href={% static 'css/downloadmain.css' %}>
     <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
@@ -25,7 +26,7 @@
             <div class="list-group">
                 <a href="#" class="list-group-item">
                     <div class="col-md-2 col-xs-2 col-sm-2">
-                        <img src="img/hjw.jpg" class="downloadimg">
+                        <img src={% static 'image/hjw.jpg' %} class="downloadimg">
                     </div>
                     <h4 class="list-group-item-heading">
                         计算机安全保密
@@ -37,7 +38,7 @@
                 </a>
                 <a href="#" class="list-group-item">
                     <div class="col-md-2 col-xs-2 col-sm-2">
-                        <img src="img/hjw.jpg" class="downloadimg">
+                        <img src={% static 'image/hjw.jpg' %} class="downloadimg">
                     </div>
                     <h4 class="list-group-item-heading">
                         Linux原理与应用
@@ -49,7 +50,7 @@
                 </a>
                 <a href="#" class="list-group-item">
                     <div class="col-md-2 col-xs-2 col-sm-2">
-                        <img src="img/hjw.jpg" class="downloadimg">
+                        <img src={% static 'image/hjw.jpg' %} class="downloadimg">
                     </div>
                     <h4 class="list-group-item-heading">
                         计算机体系结构
@@ -61,7 +62,7 @@
                 </a>
                 <a href="#" class="list-group-item">
                     <div class="col-md-2 col-xs-2 col-sm-2">
-                        <img src="img/hjw.jpg" class="downloadimg">
+                        <img src={% static 'image/hjw.jpg' %} class="downloadimg">
                     </div>
                     <h4 class="list-group-item-heading">
                         编译原理

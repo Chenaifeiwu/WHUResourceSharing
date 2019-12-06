@@ -34,7 +34,9 @@ class LoginView(View):
                         # 立刻过期
                         request.session.set_expiry(0)
                     # 关于返回值，和前端人员约定好，看p245
-                    return JsonResponse({'code': 200, 'message': '', 'data': {}})
+                    # return JsonResponse({'code': 200, 'message': '', 'data': {}})
+                    rank_list = ['编译原理','算法','计算机组成原理','微机接口','模式识别']
+                    return render(request,'base/index.html',context={'rank_list':rank_list})
                 else:
                     return JsonResponse({'code': 405, 'message': '账号不是active', 'data': {}})
             else:
@@ -66,19 +68,22 @@ class RegisterView(View):
             return JsonResponse({'code':499,'message':'','data':errors})
 
 
+
 def index(request):
-    # if user is not valid
-    std_id = request.session.get('std_id')
-    if std_id:
-        user = User.objects.get(std_id=std_id)
-    else:
-        return HttpResponse('没有std_id')
-    # 如果user存在
-    if user:
-        return redirect(reverse('base:base_user'))
-    else:
-        return redirect(reverse('base:base_login'))
-    # return HttpResponse('ok')
+
+    rank_list = ['编译原理', '算法', '计算机组成原理', '微机接口', '模式识别']
+
+    persons = {
+        'hjw' : {'image':'image/hjw.jpg','text':'11111111'},
+        'zyr' : {'image':'image/zyr.jpg','text':'22222222'},
+        'djc' : {'image':'image/djc.jpg','text':'33333333'},
+        'xzy' : {'image':'image/xzy.jpg','text':'44444444'},
+    }
+    context = {
+        'rank_list': rank_list,
+        'persons': persons
+    }
+    return render(request,'base/index.html',context=context)
 
 
 def user_page(request):

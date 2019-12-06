@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'apps.cms',
     'apps.base',
     'apps.whursauth',
+    'apps.download'
 ]
 
 MIDDLEWARE = [

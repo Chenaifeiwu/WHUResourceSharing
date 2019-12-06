@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>下载</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href={% static 'css/download.css' %}>
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body class="text-center">
+<div class="container marketing">
+    <div class="row">
+        <hr class="featurette-divider">
+        <div class="row">
+            <div class="col-md-5 order-md-1">
+                <img src={% static 'image/djc.jpg' %}>
+            </div>
+            <div class="col-md-7 order-md-2">
+                <h2 class="featurette-heading">
+                    <span class="text-muted">资源名</span>
+                </h2>
+                <div class="information">
+                    <p class="lead">资源信息</p>
+                </div>
+                <div class="col-md-3 col-md-offset-9">
+                    <button class="btn btn-primary btn-download">下载</button>
+                </div>
+            </div>
+        </div>
+        <hr class="featurette-divider">
+    </div>
+</div>
+</body>
+</html>
